@@ -93,11 +93,48 @@
     }
 
     .updates {
-      background: linear-gradient(160deg, var(--pink), #ff9ccc);
-      border-radius: 26px;
-      padding: 26px;
+      background: linear-gradient(135deg, #ff6fae, #ff8fc7);
+      border-radius: 18px 28px 28px 18px;
+      padding: 28px 26px 28px 32px;
       font-family: 'Patrick Hand', cursive;
-      box-shadow: 0 15px 40px rgba(255, 122, 182, 0.45), inset -6px 0 0 rgba(255,255,255,0.45);
+      box-shadow:
+        inset -10px 0 0 rgba(255,255,255,0.45),
+        inset -14px 0 0 rgba(0,0,0,0.08),
+        0 20px 45px rgba(255, 122, 182, 0.55);
+      position: relative;
+    }
+
+    .updates::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 6px;
+      width: 6px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.15);
+    }
+
+    .updates::after {
+      content: "★ ✦ ✧";
+      position: absolute;
+      top: -18px;
+      right: 18px;
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .update-entry {
+      background: rgba(255,255,255,0.88);
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+      transform: rotate(-0.6deg);
+    }
+
+    .update-entry:nth-child(even) {
+      transform: rotate(0.8deg);
     }
 
     .updates h2 {
@@ -189,6 +226,24 @@
       Big Tripura W today. Writing this up.
     </div>
   </section>
+  <section class="columns">
+    <div class="column reported">
+      <h3>Reported</h3>
+      <p contenteditable="true">
+        Facts, confirmations, on-record accounts, receipts. Stories that have been checked, verified, and are ready to be read straight.
+      </p>
+      <a href="#" class="column-link">Read reported stories →</a>
+    </div>
+
+    <div class="column opinion">
+      <h3>Opinion</h3>
+      <p contenteditable="true">
+        Hot takes, reflections, commentary, and the messy in-betweens. This is where voices speak louder than facts.
+      </p>
+      <a href="#" class="column-link">Read opinion pieces →</a>
+    </div>
+  </section>
+
 </main>
 
 <section class="submit">
