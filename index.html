@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -14,12 +14,13 @@
       --soft-blue: #eaf2fb;
       --gray-blue: #b7c6d9;
       --black: #0b0b0b;
+      --glow-blue: #7dd3fc;
     }
 
     body {
       margin: 0;
       font-family: Inter, sans-serif;
-      background: var(--soft-blue);
+      background: radial-gradient(circle at top, #f4f8ff, #e6eef7 60%, #dbe7f3);
       color: var(--black);
     }
 
@@ -28,109 +29,120 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 24px;
-      background: black;
+      background: linear-gradient(90deg, #000, #111);
       color: white;
+      box-shadow: 0 0 25px rgba(125, 211, 252, 0.25);
     }
 
     header .logo {
       font-weight: 800;
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      text-shadow: 0 0 12px rgba(255,255,255,0.25);
     }
 
     header .menu {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       cursor: pointer;
     }
 
     main {
       display: grid;
       grid-template-columns: 2fr 1fr;
-      gap: 24px;
-      padding: 32px;
+      gap: 28px;
+      padding: 36px;
     }
 
-    /* Featured article */
     .featured {
-      background: white;
-      padding: 32px;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      background: linear-gradient(180deg, #ffffff, #f6f9ff);
+      padding: 36px;
+      border-radius: 22px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.08), inset 0 0 30px rgba(125,211,252,0.15);
+      position: relative;
+    }
+
+    .featured::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 24px;
+      background: linear-gradient(120deg, transparent, rgba(125,211,252,0.6), transparent);
+      opacity: 0.35;
+      pointer-events: none;
     }
 
     .featured h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-style: italic;
       margin-top: 0;
+      text-shadow: 0 0 18px rgba(125,211,252,0.35);
     }
 
     .featured p {
-      font-size: 1.05rem;
-      line-height: 1.6;
+      font-size: 1.08rem;
+      line-height: 1.7;
     }
 
     .featured a {
       display: inline-block;
-      margin-top: 16px;
+      margin-top: 18px;
       font-weight: 600;
       text-decoration: none;
       color: black;
       border-bottom: 2px solid black;
     }
 
-    /* Updates book */
     .updates {
-      background: var(--pink);
-      border-radius: 22px;
-      padding: 24px;
+      background: linear-gradient(160deg, var(--pink), #ff9ccc);
+      border-radius: 26px;
+      padding: 26px;
       font-family: 'Patrick Hand', cursive;
-      position: relative;
-      box-shadow: inset -6px 0 0 rgba(255,255,255,0.4);
+      box-shadow: 0 15px 40px rgba(255, 122, 182, 0.45), inset -6px 0 0 rgba(255,255,255,0.45);
     }
 
     .updates h2 {
       margin-top: 0;
       text-align: center;
       letter-spacing: 1px;
+      text-shadow: 0 0 12px rgba(255,255,255,0.5);
     }
 
     .update-entry {
-      background: rgba(255,255,255,0.75);
-      padding: 14px;
-      border-radius: 12px;
-      margin-bottom: 14px;
+      background: rgba(255,255,255,0.85);
+      padding: 16px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
     }
 
-    /* Submit section */
     .submit {
-      margin: 32px;
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
+      margin: 36px;
+      background: linear-gradient(180deg, #ffffff, #f2f6fb);
+      padding: 32px;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
     .submit textarea {
       width: 100%;
       min-height: 120px;
-      padding: 12px;
+      padding: 14px;
       font-family: Inter;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
     }
 
     footer {
       text-align: center;
-      padding: 18px;
+      padding: 20px;
       font-size: 0.9rem;
       color: #444;
-    }
-
-    /* Editable hint */
-    [contenteditable="true"] {
-      outline: 2px dashed transparent;
+      text-shadow: 0 0 10px rgba(125,211,252,0.2);
     }
 
     [contenteditable="true"]:focus {
-      outline: 2px dashed var(--gray-blue);
+      outline: 2px dashed var(--glow-blue);
       background: #f8fbff;
     }
 
